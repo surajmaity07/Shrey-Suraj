@@ -1,0 +1,108 @@
+#:kivy 1.9.9 
+
+Screen:
+    name: "profile"
+    MDFloatLayout:
+        bg_color: rgba(246, 250, 255, 255)
+        ProfileScreen:
+            size_hint_y: .65
+            pos_hint: {"center_y": .7}
+            elevation: 6
+            bg_color: 1, 1, 1, 1
+            radius: (0, 0, 20, 20)
+            MDIconButton:
+                icon: "arrow-left"
+                pos_hint: {"center_y": .91}
+                user_font_size: "20sp"
+                theme_text_color: "Custom"
+                text_color: rgba(71, 92, 119, 255)
+            MDIconButton:
+                icon: "dots-vertical"
+                pos_hint: {"center_x": .93, "center_y": .91}
+                user_font_size: "20sp"
+                theme_text_color: "Custom"
+                text_color: rgba(71, 92, 119, 255)
+            Label:
+                text: "My Profile"
+                font_name: "BPoppins"
+                font_size: "20sp"
+                pos_hint: {"center_x": .56, "center_y": .82}
+                halign: "center"
+                color: rgba(188, 202, 228, 255)
+            Image:
+                source: "profile_pic.png"
+                pos_hint: {"center_x": .5, "center_y": .62}
+            Label:
+                text: "THE_NAME"
+                font_name: "BPoppins"
+                pos_hint: {"center_y": .44}
+                halign: "center"
+                color: rgba(71, 92, 119, 255)
+            Label:
+                text: "THE ADRRESS"
+                font_name: "MPoppins"
+                pos_hint: {"center_y": .36}
+                halign: "center"
+                font_size: "12sp"
+                color: rgba(188, 202, 228, 255)
+            Label:
+                text: "THE ADRRESS 2 (final)"
+                font_name: "MPoppins"
+                pos_hint: {"center_y": .3}
+                halign: "center"
+                font_size: "12sp"
+                color: rgba(188, 202, 228, 255)
+            GridLayout:
+                rows: 2
+                cols: 3
+                size_hint: .85, .12
+                pos_hint: {"center_x": .5, "center_y": .15}
+                Label:
+                    text: "Photos"
+                    halign: "center"
+                    font_name: "MPoppins"
+                    font_size: "12sp"
+                    color: rgba(188, 202, 228, 255)
+                Label:
+                    text: "Follows"
+                    halign: "center"
+                    font_name: "MPoppins"
+                    font_size: "12sp"
+                    color: rgba(188, 202, 228, 255)
+                Label:
+                    text: "Followers"
+                    halign: "center"
+                    font_name: "MPoppins"
+                    font_size: "12sp"
+                    color: rgba(188, 202, 228, 255)
+                Label:
+                    text: "222"
+                    halign: "center"
+                    font_name: "BPoppins"
+                    font_size: "14sp"
+                    color: rgba(71, 92, 119, 255)
+                Label:
+                    text: "111"
+                    halign: "center"
+                    font_name: "BPoppins"
+                    font_size: "14sp"
+                    color: rgba(71, 92, 119, 255)
+                Label:
+                    text: "555"
+                    halign: "center"
+                    font_name: "BPoppins"
+                    font_size: "14sp"
+                    color: rgba(71, 92, 119, 255)
+        Image:
+            source: "profile_pic.png"
+            size_hint: .35, .35
+            pos_hint: {"center_x": .32, "center_y": .185}
+        Image:
+            source: "profile_pic.png"
+            size_hint: .35, .35
+            pos_hint: {"center_x": .68, "center_y": .26}
+        Image:
+            source: "profile_pic.png"
+            size_hint: .35, .35
+            pos_hint: {"center_x": .68, "center_y": .185}
+    
