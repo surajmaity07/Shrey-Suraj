@@ -56,6 +56,15 @@ class TrainerScreen(Screen):
 class NutritionScreen(Screen):
     pass
 
+class WalletScreen(Screen):
+    pass
+
+class ProfileScreen(Screen):
+    pass
+
+class ChatScreen(Screen):
+    pass
+
 class MuscleTarget(Screen):
     pass
 
@@ -70,12 +79,6 @@ class SecondaryWidget(RecycleView, Screen):
     def __init__(self, **kwargs):
         super(SecondaryWidget, self).__init__(**kwargs)
         self.data = [{'text': str(x)} for x in range(2)]
-
-class ProfileScreen(Screen):
-    pass
-
-class ChatScreen(Screen):
-    pass
 
 #Screen Manager for screens
 class GymLayoutApp(MDApp):
@@ -99,6 +102,8 @@ class GymLayoutApp(MDApp):
         sm.add_widget(EMSScreen(name='EMSScreen'))
         sm.add_widget(TrainerScreen(name='TrainerScreen'))
         sm.add_widget(NutritionScreen(name='NutritionScreen'))
+        sm.add_widget(ProfileScreen(name='ProfileScreen'))
+        sm.add_widget(WalletScreen(name='WalletScreen'))
         
         self.theme_cls.theme_style = "Dark"
         self.theme_cls.primary_palette = "BlueGray"

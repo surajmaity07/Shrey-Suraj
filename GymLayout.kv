@@ -404,52 +404,6 @@
                     root.manager.current = 'MainMenu'
 
 <MainMenu>:
-    MDScreen:
-        MDNavigationLayout:
-            MDScreenManager:
-                MDScreen:
-                #for the navigation menu
-                    MDTopAppBar:
-                        title: 'Navigation'
-                        elivation: 4
-                        pos_hint: {'x' : .00007, 'y' : .9}
-                        size_hint_x: 0.25
-                        size_hint_y: 0.1
-                        left_action_items:[['menu', lambda x:nav_drawer.set_state("open")]]
-            MDNavigationDrawer:
-                id: nav_drawer
-                canvas:
-                    Color:
-                        rgba: 0.555, 0.555, 0.555, 1
-                    Rectangle:
-                        size: self.size
-                        pos: self.pos
-                MDNavigationDrawerMenu:
-                    MDNavigationDrawerHeader:
-                        title: "Sudama-Krishna"
-                        text: "Exploring Nature"
-                        spacing: "4dp"
-                        padding: "12dp", 0, 0, "32dp"
-                    DrawerClickableItem:
-                        icon: "mango_tree.jpg"
-                        text: "Profile"
-                        md_bg_color: 0,0,0,1
-                    DrawerClickableItem:
-                        icon: "mango_tree.jpg"
-                        text: "View Your Journey"
-                        md_bg_color: 0,0,0,1
-                    DrawerClickableItem:
-                        icon: "mango_tree.jpg"
-                        text: "Wallet & Transactions"
-                        md_bg_color: 0,0,0,1
-                    DrawerClickableItem:
-                        icon: "mango_tree.jpg"
-                        text: "Share"
-                        md_bg_color: 0,0,0,1
-                    DrawerClickableItem:
-                        icon: "mango_tree.jpg"
-                        text: "Rate"
-                        md_bg_color: 0,0,0,1
     GridLayout:
         rows : 2
         MDScreen:
@@ -529,14 +483,16 @@
                             icon: "mango_tree.jpg"
                             text: "Profile"
                             md_bg_color: 0,0,0,1
-                        DrawerClickableItem:
-                            icon: "mango_tree.jpg"
-                            text: "View Your Journey"
-                            md_bg_color: 0,0,0,1
+                            on_release:
+                                root.manager.transition.direction = 'left'
+                                root.manager.current = 'ProfileScreen'
                         DrawerClickableItem:
                             icon: "mango_tree.jpg"
                             text: "Wallet & Transactions"
                             md_bg_color: 0,0,0,1
+                            on_release:
+                                root.manager.transition.direction = 'left'
+                                root.manager.current = 'WalletScreen'
                         DrawerClickableItem:
                             icon: "mango_tree.jpg"
                             text: "Rate"
@@ -551,6 +507,11 @@
                             md_bg_color: 0,0,0,1
 
 <Live_TrainingScreen>:
+    Label:
+        text: "You can watch and follow the Live Sessions."
+        size_hint_x: 0.2
+        size_hint_y: 0.12
+        pos_hint: {'x' : .4, 'y' : .35}
     Button:
         text: 'Back'
         outline_color: 0, 0.5, 0.5, 1
@@ -561,6 +522,11 @@
             root.manager.current = 'MainMenu'
 
 <EMSScreen>:
+    Label:
+        text: "The EMS regulations and its status will be reflected here."
+        size_hint_x: 0.2
+        size_hint_y: 0.12
+        pos_hint: {'x' : .4, 'y' : .35}
     Button:
         text: 'Back'
         outline_color: 0, 0.5, 0.5, 1
@@ -571,6 +537,11 @@
             root.manager.current = 'MainMenu'
 
 <TrainerScreen>:
+    Label:
+        text: "You can interact with your trainers here and history of it will be reflected here."
+        size_hint_x: 0.2
+        size_hint_y: 0.12
+        pos_hint: {'x' : .4, 'y' : .35}
     Button:
         text: 'Back'
         outline_color: 0, 0.5, 0.5, 1
@@ -581,6 +552,41 @@
             root.manager.current = 'MainMenu'
 
 <NutritionScreen>:
+    Label:
+        text: "The diet plans or the nutrition plans you need to follow will be reflected here."
+        size_hint_x: 0.2
+        size_hint_y: 0.12
+        pos_hint: {'x' : .4, 'y' : .35}
+    Button:
+        text: 'Back'
+        outline_color: 0, 0.5, 0.5, 1
+        size_hint: (1, None)
+        font_size: 30
+        on_press:
+            root.manager.transition.direction = 'right'
+            root.manager.current = 'MainMenu'
+
+<ProfileScreen>:
+    Label:
+        text: "Your profile details will be reflected here."
+        size_hint_x: 0.2
+        size_hint_y: 0.12
+        pos_hint: {'x' : .4, 'y' : .35}
+    Button:
+        text: 'Back'
+        outline_color: 0, 0.5, 0.5, 1
+        size_hint: (1, None)
+        font_size: 30
+        on_press:
+            root.manager.transition.direction = 'right'
+            root.manager.current = 'MainMenu'
+
+<WalletScreen>:
+    Label:
+        text: "Your wallet information and transactions history will be reflected here."
+        size_hint_x: 0.2
+        size_hint_y: 0.12
+        pos_hint: {'x' : .4, 'y' : .35}
     Button:
         text: 'Back'
         outline_color: 0, 0.5, 0.5, 1
@@ -591,6 +597,40 @@
             root.manager.current = 'MainMenu'
 
 <MuscleTarget>:
+    FloatLayout:
+        Label:
+            text: "This is just an indication of the places where the muscle groups of the body will be placed."
+            size_hint_x: 0.2
+            size_hint_y: 0.12
+            pos_hint: {'x' : .4, 'y' : .35}
+        Button:
+            text: "AA"
+            pos_hint: {'x' : .45, 'y' : .84}
+            size_hint: .11, .12
+        Button:
+            text: "BA"
+            pos_hint: {'x' : .15, 'y' : .64}
+            size_hint: .11, .12
+        Button:
+            text: "BB"
+            pos_hint: {'x' : .45, 'y' : .64}
+            size_hint: .11, .12
+        Button:
+            text: "BC"
+            pos_hint: {'x' : .75, 'y' : .64}
+            size_hint: .11, .12
+        Button:
+            text: "CA"
+            pos_hint: {'x' : .45, 'y' : .44}
+            size_hint: .11, .12
+        Button:
+            text: "DA"
+            pos_hint: {'x' : .25, 'y' : .24}
+            size_hint: .11, .12
+        Button:
+            text: "DB"
+            pos_hint: {'x' : .65, 'y' : .24}
+            size_hint: .11, .12
     Button:
         text: 'Next'
         outline_color: 0, 0.5, 0.5, 1
